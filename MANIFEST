@@ -1,0 +1,9 @@
+Changes
+js/HeliosTestService.js
+lib/HeliosX/JSService.pm
+lib/HeliosX/JSTestService.pm
+Makefile.PL
+MANIFEST
+README
+t/HeliosX-JSService.t
+META.yml                                 Module meta-data (added by MakeMaker)

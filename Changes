@@ -1,0 +1,6 @@
+Revision history for Perl extension HeliosX::JSService.
+
+0.01  Wed May 11 20:25:34 2011
+	- original version; created by h2xs 1.23 with options
+		-XA HeliosX::JSService
+
