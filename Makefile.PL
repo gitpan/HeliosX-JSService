@@ -11,5 +11,5 @@ WriteMakefile(
                          }, # e.g., Module::Name => 1.1
     ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
       (ABSTRACT_FROM  => 'lib/HeliosX/JSService.pm', # retrieve abstract from module
-       AUTHOR         => 'Andrew Johnson <andy at cpan dot org>') : ()),
+       AUTHOR         => 'Andrew Johnson <lajandy at cpan dot org>') : ()),
 );

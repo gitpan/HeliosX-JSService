@@ -1,4 +1,7 @@
 Changes
+eg/exampleservice.xml
+eg/proto.pl
+hxjs_make_project.pl
 js/HeliosTestService.js
 lib/HeliosX/JSService.pm
 lib/HeliosX/JSTestService.pm

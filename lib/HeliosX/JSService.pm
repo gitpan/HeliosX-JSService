@@ -12,7 +12,7 @@ use JSPL;
 use Helios::Error;
 use Helios::LogEntry::Levels qw(:all);
 
-our $VERSION = '0.01_1973';
+our $VERSION = '0.01_4703';
 
 
 =head1 NAME
@@ -22,7 +22,8 @@ written in JavaScript
 
 =head1 SYNOPSIS
 
-  In a Perl .pm file:
+In a Perl .pm file:
+ 
   # create a Perl stub for your JavaScript service
   package HeliosX::JSTestService;
   use parent qw(HeliosX::JSService);
@@ -30,20 +31,28 @@ written in JavaScript
   1;
 
 
-  In a JavaScript .js file:
+In a JavaScript .js file:
+ 
   // this is a rough equivalent to Helios::TestService, but in JS
   // all we do is log the job arguments and mark the job as completed
-  
+ 
+  /* Helios variables and objects provided to JavaScript:
+  	HeliosService object, the current instance of the Helios service
+  	HeliosConfig  hash, the service's current configuration
+  	HeliosJob     object, the current Helios job
+  	HeliosJobArg  hash, the current job's arguments		  
+   */
+   
   // log each of the job's arguments in the logging system
-  for (var key in Args) {
-      Service.logMsg(Job, "Argname: " + key + " Value: " + Args[key]);
+  for (var key in HeliosJobArgs) {
+      HeliosService.logMsg(HeliosJob, "Argname: " + key + " Value: " + HeliosJobArgs[key]);
   }
   
   // mark the job as completed
-  Service.completedJob(Job);
+  HeliosService.completedJob(Job);
 
-
-  On the command line, use the typical helios.pl service daemon start cmd:
+On the command line, use the typical helios.pl service daemon start cmd:
+ 
   helios.pl HeliosApp::MyService
 
 
@@ -232,6 +241,7 @@ calls the configureJSContext() method for any further configuration,
 returning the resulting context to the calling routine.
 
 The %params variable includes the typical Helios information:
+
   CONFIG  the service class configuration (hashref)
   JOB     the current job to be processed (Helios::Job object)
   ARGS    the current job's arguments (hashref)
@@ -247,10 +257,10 @@ sub createJSContext {
 	my %params = @_;
 
 	my $ctx = JSPL->stock_context();
-	$ctx->bind_value('Config' => $params{CONFIG});
-	$ctx->bind_value('Args' => $params{ARGS});
-	$ctx->bind_object('Service' => $self);
-	$ctx->bind_object('Job' => $params{JOB});
+	$ctx->bind_value('HeliosConfig' => $params{CONFIG});
+	$ctx->bind_value('HeliosJobArgs' => $params{ARGS});
+	$ctx->bind_object('HeliosService' => $self);
+	$ctx->bind_object('HeliosJob' => $params{JOB});
 
 	$params{CONTEXT} = $ctx;
 

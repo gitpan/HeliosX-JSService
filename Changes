@@ -1,5 +1,9 @@
 Revision history for Perl extension HeliosX::JSService.
 
+0.01_4703  Wed Nov 23 20:00:31 2011
+	- Added hxjs_make_project.pl to take care of the Perl side of things
+	- Changed the Service, Job, etc. in JS to HeliosService, HeliosJob, etc.
+	  (may change again in the future)
 0.01  Wed May 11 20:25:34 2011
 	- original version; created by h2xs 1.23 with options
 		-XA HeliosX::JSService

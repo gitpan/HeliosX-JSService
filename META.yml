@@ -1,9 +1,9 @@
 --- #YAML:1.0
 name:               HeliosX-JSService
-version:            0.01_1973
+version:            0.01_4703
 abstract:           Helios service base class to allow Helios services
 author:
-    - Andrew Johnson <andy at cpan dot org>
+    - Andrew Johnson <lajandy at cpan dot org>
 license:            unknown
 distribution_type:  module
 configure_requires:

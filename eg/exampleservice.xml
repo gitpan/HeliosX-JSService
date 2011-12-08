@@ -1,0 +1,21 @@
+
+<hxjsDescription>
+<servicename>HeliosApp::ExampleService</servicename>
+<jssource>example.js</jssource>
+<PerlModules>
+	<module>DBI</module>
+	<module>Solr::Client</module>
+</PerlModules>
+<bindVariables>
+	<object>
+		<jsvar>DBI</jsvar>
+		<perlvar>DBI</perlvar>
+	</object>
+	<object>
+		<jsvar>SolrClient</jsvar>
+		<perlvar>Solr::Client</perlvar>
+	</object>
+</bindVariables>
+
+</hxjsDescription>
+
